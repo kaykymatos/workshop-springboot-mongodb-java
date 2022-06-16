@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import com.kayky.workshopmongodb.domain.Post;
 import com.kayky.workshopmongodb.domain.User;
 import com.kayky.workshopmongodb.dto.AuthorDTO;
+import com.kayky.workshopmongodb.dto.CommentDTO;
 import com.kayky.workshopmongodb.repository.PostRepository;
 import com.kayky.workshopmongodb.repository.UserRepository;
 
@@ -41,7 +42,18 @@ public class Initialization implements CommandLineRunner {
 		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Irei viajar para São Paulo", new AuthorDTO(maria));
 		Post post2 = new Post(null, sdf.parse("11/06/2018"), "Acordei feliz!", "Bom dia gente!", new AuthorDTO(maria));
 		
+		CommentDTO comment1 = new CommentDTO("Boa viagem", sdf.parse("21/03/2018"), new AuthorDTO(alex));
+		CommentDTO comment2 = new CommentDTO("Aproveite", sdf.parse("21/03/2018"), new AuthorDTO(bob));
+		CommentDTO comment3 = new CommentDTO("Tenha um ótimo dia!", sdf.parse("21/03/2018"), new AuthorDTO(alex));
+		
+		post1.getComment().addAll(Arrays.asList(comment1,comment2));	
+		post2.getComment().addAll(Arrays.asList(comment3));
+		
+		
 		postRepository.saveAll(Arrays.asList(post1,post2));
+		
+		maria.getPosts().addAll(Arrays.asList(post1,post2));
+		userRepository.save(maria);
 	}
 
 }
