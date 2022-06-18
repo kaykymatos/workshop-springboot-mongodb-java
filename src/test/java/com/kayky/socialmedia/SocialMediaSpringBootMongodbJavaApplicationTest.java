@@ -1,10 +1,10 @@
-package com.kayky.workshopmongodb;
+package com.kayky.socialmedia;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WorkshopSpringbootMongodbJavaApplicationTests {
+class SocialMediaSpringBootMongodbJavaApplicationTest {
 
 	@Test
 	void contextLoads() {

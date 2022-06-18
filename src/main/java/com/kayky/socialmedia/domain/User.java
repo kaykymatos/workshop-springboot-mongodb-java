@@ -1,4 +1,4 @@
-package com.kayky.workshopmongodb.domain;
+package com.kayky.socialmedia.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
-public class User implements Serializable{
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class User implements Serializable{
 	private String id;
 	private String name;
 	private String email;
-	
+
 	@DBRef(lazy = true)
 	private List<Post> posts = new ArrayList<>();
 
@@ -63,7 +63,7 @@ public class User implements Serializable{
 	public void setPosts(List<Post> posts) {
 		this.posts = posts;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -78,5 +78,5 @@ public class User implements Serializable{
 		User other = (User) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
 }

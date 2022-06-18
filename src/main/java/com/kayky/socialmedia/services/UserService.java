@@ -1,4 +1,4 @@
-package com.kayky.workshopmongodb.services;
+package com.kayky.socialmedia.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kayky.workshopmongodb.domain.User;
-import com.kayky.workshopmongodb.dto.UserDTO;
-import com.kayky.workshopmongodb.repository.UserRepository;
-import com.kayky.workshopmongodb.services.exception.ObjectNotFoundException;
+import com.kayky.socialmedia.domain.User;
+import com.kayky.socialmedia.dto.UserDTO;
+import com.kayky.socialmedia.repository.UserRepository;
+import com.kayky.socialmedia.services.exception.ObjectNotFoundException;
 
 @Service
 public class UserService {

@@ -1,6 +1,6 @@
-package com.kayky.workshopmongodb.services.exception;
+package com.kayky.socialmedia.services.exception;
 
-public class ObjectNotFoundException extends RuntimeException{
+public class ObjectNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

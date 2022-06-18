@@ -1,4 +1,4 @@
-package com.kayky.workshopmongodb.domain;
+package com.kayky.socialmedia.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.kayky.workshopmongodb.dto.AuthorDTO;
-import com.kayky.workshopmongodb.dto.CommentDTO;
+import com.kayky.socialmedia.dto.AuthorDTO;
+import com.kayky.socialmedia.dto.CommentDTO;
 
 @Document
 public class Post implements Serializable {
@@ -24,7 +24,7 @@ public class Post implements Serializable {
 	private String body;
 
 	private AuthorDTO author;
-	private List<CommentDTO> comment = new ArrayList<>();
+	private List<CommentDTO> comments = new ArrayList<>();
 
 	public Post() {
 	}
@@ -77,13 +77,15 @@ public class Post implements Serializable {
 	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
+
 	public List<CommentDTO> getComment() {
-		return comment;
+		return comments;
 	}
 
 	public void setComment(List<CommentDTO> comment) {
-		this.comment = comment;
+		this.comments = comment;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

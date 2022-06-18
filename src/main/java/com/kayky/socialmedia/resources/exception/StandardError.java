@@ -1,4 +1,4 @@
-package com.kayky.workshopmongodb.resources.exception;
+package com.kayky.socialmedia.resources.exception;
 
 import java.io.Serializable;
 
